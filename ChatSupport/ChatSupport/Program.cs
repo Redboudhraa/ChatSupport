@@ -40,7 +40,5 @@ app.MapControllers();
 
 app.Run();
 
-// ******************************************************
-// *** THIS IS THE FIX - ADD THIS LINE AT THE VERY END ***
-// ******************************************************
+
 public partial class Program { }

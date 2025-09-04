@@ -9,7 +9,7 @@ public class InMemoryChatSessionRepository : IChatSessionRepository
     private readonly ConcurrentDictionary<string, ChatSession> _sessions = new();
     private readonly ConcurrentQueue<string> _queueOrder = new();
 
-    // *** THIS IS THE NEW METHOD IMPLEMENTATION ***
+
     /// <summary>
     /// Atomically removes the next session ID from the queue and returns the full session object.
     /// It ensures FIFO (First-In, First-Out) processing.

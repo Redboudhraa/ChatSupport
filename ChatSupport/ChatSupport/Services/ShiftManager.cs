@@ -63,7 +63,7 @@ public class ShiftManager : IShiftManager
         return (await _agentRepository.GetAllAgentsAsync()).Where(a => a.IsOnShift).ToList();
     }
 
-    // --- MERGED LOGIC FROM CapacityCalculator ---
+
 
     public async Task<int> GetCurrentTeamCapacityAsync()
     {
@@ -89,7 +89,7 @@ public class ShiftManager : IShiftManager
                now.Hour >= 9 && now.Hour < 18; // Example: 9 AM to 6 PM UTC
     }
 
-    // This is now a private helper, used internally.
+
     private async Task<bool> ShouldOverflowBeActiveAsync(List<Agent> baseTeam)
     {
         var currentlyActiveOverflow = (await _agentRepository.GetAllAgentsAsync()).Any(a => a.AgentId.StartsWith("of") && a.IsOnShift);
